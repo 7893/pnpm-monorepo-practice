@@ -1,0 +1,40 @@
+name: CI Pipeline # 工作流程的名称
+
+on: # 定义触发工作流程的事件
+  push:
+    branches: [ main ] # 当有代码推送到 main 分支时触发
+  pull_request:
+    branches: [ main ] # 当有 Pull Request 指向 main 分支时触发
+
+jobs: # 定义工作流程中的任务
+  build: # 定义一个名为 'build' 的任务
+    runs-on: ubuntu-latest # 指定任务运行在最新的 Ubuntu 环境中
+    steps: # 定义任务中的步骤
+      - name: Checkout Repository # 步骤1：检出代码
+        uses: actions/checkout@v4 # 使用官方的 checkout action v4 版本
+        with:
+          fetch-depth: 0 # 获取所有 Git 历史记录，Turborepo 需要它来计算受影响的包
+
+      - name: Setup pnpm # 步骤2：设置 pnpm 环境
+        uses: pnpm/action-setup@v4 # 使用 pnpm 官方的 setup action v4 版本
+        with:
+          version: latest # 使用最新版的 pnpm (或指定版本，如 8)
+          run_install: false # 我们将手动运行 pnpm install
+
+      - name: Setup Node.js # 步骤3：设置 Node.js 环境
+        uses: actions/setup-node@v4 # 使用官方的 setup-node action v4 版本
+        with:
+          node-version: 20 # 指定 Node.js 版本 (推荐使用 LTS 版本)
+          cache: 'pnpm' # 启用 pnpm 的依赖缓存，加速后续流程
+
+      - name: Install Dependencies # 步骤4：安装依赖
+        run: pnpm install --frozen-lockfile # 使用 pnpm 安装依赖，--frozen-lockfile 确保使用锁文件精确安装
+
+      - name: Run Lint (via Turbo) # 步骤5：运行 Lint 任务 (通过 Turbo)
+        run: pnpm turbo run lint # 执行我们在 turbo.json 中定义的 lint 任务
+
+      # - name: Run Tests (via Turbo) # 步骤6 (占位)：运行测试任务 (如果添加了测试)
+      #   run: pnpm turbo run test
+
+      - name: Run Build (via Turbo) # 步骤7：运行构建任务 (通过 Turbo)
+        run: pnpm turbo run build # 执行我们在 turbo.json 中定义的 build 任务
