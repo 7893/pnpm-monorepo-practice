@@ -1,0 +1,6 @@
+
+
+> @my-monorepo/app-two@1.0.0 build /home/ubuntu/pnpm-monorepo-practice/apps/app-two
+> echo "Build script for $PNPM_PACKAGE_NAME (placeholder)"
+
+Build script for  (placeholder)

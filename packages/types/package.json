@@ -4,7 +4,9 @@
   "private": true,
   "description": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "echo \"Build script for @my-monorepo/types(noop)\"",
+    "lint": "echo \"Lint script for @my-monorepo/types (placeholder)\"",
+    "test": "echo \"Test script for @my-monorepo/types (placeholder)\""
   },
   "keywords": [],
   "author": "",

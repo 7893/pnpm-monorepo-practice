@@ -1,18 +1,23 @@
 {
-  "name": "@my-monorepo/app-one",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "packageManager": "pnpm@10.7.1",
-  "dependencies": {
-    "@my-monorepo/utils": "workspace:^",
-    "lodash": "^4.17.21"
-  }
+    "name": "@my-monorepo/app-one",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+
+    "scripts": {
+        "start": "node index.js",
+        "build": "echo \"Build script for $PNPM_PACKAGE_NAME (placeholder)\"", 
+        "lint": "echo \"Lint script for $PNPM_PACKAGE_NAME (placeholder)\"",
+        "test": "echo \"Test script for $PNPM_PACKAGE_NAME (placeholder)\""
+    },
+
+
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "packageManager": "pnpm@10.7.1",
+    "dependencies": {
+        "@my-monorepo/utils": "workspace:^",
+        "lodash": "^4.17.21"
+    }
 }

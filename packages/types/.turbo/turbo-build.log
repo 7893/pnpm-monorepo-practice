@@ -1,0 +1,6 @@
+
+
+> @my-monorepo/types@1.0.0 build /home/ubuntu/pnpm-monorepo-practice/packages/types
+> echo "Build script for @my-monorepo/types(noop)"
+
+Build script for @my-monorepo/types(noop)
