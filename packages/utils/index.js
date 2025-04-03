@@ -8,6 +8,7 @@
 function formatUser(user) {
   // 实际项目中会使用来自 @my-monorepo/types 的类型进行校验或转换
   return `User (ID: ${user.id}, Name: ${user.name})`;
+   //for stesting 
 }
 
 module.exports = { formatUser };
