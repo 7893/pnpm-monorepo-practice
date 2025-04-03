@@ -18,7 +18,7 @@ jobs: # 定义工作流程中的任务
       - name: Setup pnpm # 步骤2：设置 pnpm 环境
         uses: pnpm/action-setup@v4 # 使用 pnpm 官方的 setup action v4 版本
         with:
-          version: latest # 使用最新版的 pnpm (或指定版本，如 8)
+          #version: latest # 使用最新版的 pnpm (或指定版本，如 8)
           run_install: false # 我们将手动运行 pnpm install
 
       - name: Setup Node.js # 步骤3：设置 Node.js 环境
