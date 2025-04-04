@@ -7,7 +7,7 @@
 "scripts": {
   "start": "node index.js",
   "build": "echo \"Build script for $PNPM_PACKAGE_NAME (placeholder)\"",
-  "lint": "echo \"Lint script for $PNPM_PACKAGE_NAME (placeholder)\"",
+  "lint": "eslint . --ext .js,.ts --max-warnings 0",
   "test": "echo \"Test script for $PNPM_PACKAGE_NAME (placeholder)\""
 },
 

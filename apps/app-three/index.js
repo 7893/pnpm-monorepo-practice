@@ -1,4 +1,4 @@
-const { formatUser } = require('@my-monorepo/utils'); // 再次使用 utils
+import { formatUser } from '@my-monorepo/utils'; // 使用 import
 
 const user = { id: 3, name: 'Charlie' };
 console.log("App Three starting...");

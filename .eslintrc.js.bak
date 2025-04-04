@@ -1,0 +1,27 @@
+module.exports = {
+  root: true, // 停止向上查找配置
+  parser: '@typescript-eslint/parser', // 使用 TS 解析器 (即使是 JS 文件也通常能很好地工作)
+  plugins: [
+    '@typescript-eslint', // 加载 TS 插件
+    'prettier', // 加载 Prettier 插件
+  ],
+  extends: [
+    'eslint:recommended', // 启用 ESLint 推荐的核心规则
+    'plugin:@typescript-eslint/recommended', // 启用 TS 插件的推荐规则
+    'plugin:prettier/recommended', // 启用 Prettier 插件的推荐配置 (会运行 Prettier 并报告差异为 ESLint 错误)
+  ],
+  env: {
+    node: true, // 启用 Node.js 全局变量和作用域
+    es2021: true, // 允许使用 ES2021 语法
+  },
+  ignorePatterns: [ // 全局忽略模式
+    'node_modules/',
+    'dist/', // 忽略可能的构建输出目录
+    '.turbo/',
+    'coverage/'
+  ],
+  // 你可以在这里添加或覆盖规则
+  // rules: {
+  //   'no-unused-vars': 'warn', // 示例：将未使用的变量报告为警告
+  // }
+};

@@ -1,0 +1,5 @@
+
+
+> @my-monorepo/app-three@1.0.0 lint /home/ubuntu/pnpm-monorepo-practice/apps/app-three
+> eslint . --ext .js,.ts --max-warnings 0
+
