@@ -1,0 +1,23 @@
+# Dependencies
+/node_modules/
+
+# Turbo cache
+/.turbo/
+
+# ESLint cache (optional but good practice)
+.eslintcache
+
+# Build outputs (examples)
+/dist/
+/build/
+
+# Test outputs (example)
+/coverage/
+
+# OS generated files
+.DS_Store
+*.pem
+
+# Log files
+*.log
+# ... etc ...
